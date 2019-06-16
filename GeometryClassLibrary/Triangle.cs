@@ -11,7 +11,7 @@ namespace GeometryClassLibrary
         private double _a;
         private double _b;
         private double _c;
-        private double _p;
+        private double _p;                                                             // половинный периметр - удобней писать формулу Герона
         private bool _isRightAngle;
         private double _cathetus_L;
         private double _cathetus_R;
@@ -20,7 +20,7 @@ namespace GeometryClassLibrary
         public double A { get => _a; private set => _a = value; }
         public double B { get => _b; private set => _b = value; }
         public double C { get => _c; private set => _c = value; }
-        public double p { get => _p; private set => _p = value; }                     // половинный периметр - удобней писать формулу Герона
+        public double p { get => _p; private set => _p = value; }                     
         public bool IsRightAngle { get => _isRightAngle; private set => _isRightAngle = value; }
         public double Cathetus_L { get => _cathetus_L; private set => _cathetus_L = value; }
         public double Cathetus_R { get => _cathetus_R; private set => _cathetus_R = value; }
