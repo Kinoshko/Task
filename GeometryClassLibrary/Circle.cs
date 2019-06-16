@@ -8,9 +8,9 @@ namespace GeometryClassLibrary
 {
     public class Circle : Figure
     {
-        private double r;
+        private double _r;
 
-        public double R { get => r; private set => r = value; }
+        public double R { get => _r; private set => _r = value; }
 
         public Circle(double R)
         {
