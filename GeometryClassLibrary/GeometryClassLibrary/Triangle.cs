@@ -52,9 +52,9 @@ namespace GeometryClassLibrary
         {
             if(((sideA <= 0) || (sideB <= 0) || (sideC <= 0)) || ((sideA + sideB <= sideC) || (sideA + sideC <= sideB) || (sideB + sideC <= sideA)))
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
 
         private bool CheckRightAngle()                 // проверка - является ли треугольник прямоугльным
