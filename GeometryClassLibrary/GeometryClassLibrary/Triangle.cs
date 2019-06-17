@@ -24,7 +24,7 @@ namespace GeometryClassLibrary
 
         public Triangle(double sideA, double sideB, double sideC)
         {
-            if (((sideA <= 0) || (sideB <= 0) || (sideC <= 0)) || ((sideA + sideB <= sideC) || (sideA + sideC <= sideB) || (sideB + sideC <= sideA)))     // проверка является ли фигура треугольником
+            if (CheckIsTriangle())     
             {
                 throw new ArgumentOutOfRangeException("All sides of triangle must be greater than zero and sum sizes of 2 sides must be greater than size of third side.");
             }
@@ -46,6 +46,15 @@ namespace GeometryClassLibrary
                 return Math.Round(Math.Sqrt(halfPer * (halfPer - SideA) * (halfPer - SideB) * (halfPer - SideC)), 2);
             }
 
+        }
+        
+        private bool CheckIsTriangle()                 // проверка - является ли фигура треугольником
+        {
+            if(((sideA <= 0) || (sideB <= 0) || (sideC <= 0)) || ((sideA + sideB <= sideC) || (sideA + sideC <= sideB) || (sideB + sideC <= sideA)))
+            {
+                return false;
+            }
+            return true;
         }
 
         private bool CheckRightAngle()                 // проверка - является ли треугольник прямоугльным
