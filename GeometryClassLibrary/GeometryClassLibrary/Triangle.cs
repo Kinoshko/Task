@@ -24,7 +24,7 @@ namespace GeometryClassLibrary
 
         public Triangle(double sideA, double sideB, double sideC)
         {
-            if (CheckIsTriangle())     
+            if (CheckIsTriangle(sideA, sideB, sideC))     
             {
                 throw new ArgumentOutOfRangeException("All sides of triangle must be greater than zero and sum sizes of 2 sides must be greater than size of third side.");
             }
@@ -48,7 +48,7 @@ namespace GeometryClassLibrary
 
         }
         
-        private bool CheckIsTriangle()                 // проверка - является ли фигура треугольником
+        private bool CheckIsTriangle(double sideA, double sideB, double sideC)                 // проверка - является ли фигура треугольником
         {
             if(((sideA <= 0) || (sideB <= 0) || (sideC <= 0)) || ((sideA + sideB <= sideC) || (sideA + sideC <= sideB) || (sideB + sideC <= sideA)))
             {
