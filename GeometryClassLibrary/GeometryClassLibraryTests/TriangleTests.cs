@@ -31,28 +31,12 @@ namespace GeometryClassLibraryTests
 
         [DataRow(3, 4, 5, true)]
         [DataRow(8, 14, 11.489, true)]
+        [DataRow(3, 6, 4, false)]
+        [DataRow(1.5, 2.5 , 3, false)]
         [TestMethod]
-        public void IsRightAngle_Valid(double sideA, double sideB, double sideC, bool expected)
+        public void CheckRightAngle_Checked(double sideA, double sideB, double sideC, bool expected)
         {
             // arrange
-            Triangle triangle = new Triangle(sideA, sideB, sideC);
-
-            // act
-            triangle.CalcArea();
-            bool actual = triangle.IsRightAngle;
-
-            // assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void IsRightAngle_NotRightAngle_False()
-        {
-            // arrange
-            bool expected = false;
-            double sideA = 3;
-            double sideB = 6;
-            double sideC = 4;
             Triangle triangle = new Triangle(sideA, sideB, sideC);
 
             // act
