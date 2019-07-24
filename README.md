@@ -72,5 +72,9 @@ MongoDB и Cassandra - это нереляционные базы данных, 
 Если у продукта нет категорий, то его имя все равно должно выводиться.
 
 ```SQL
-SELECT products.name, Categories.name FROM products LEFT JOIN Categories ON products.categories_id = Categories.id;
+SELECT Categories.name, Products.name
+FROM Products 
+LEFT JOIN CategoriesProducts ON Products.Id = CategoriesProducts.prodId
+LEFT JOIN Categories ON Categories.id = CategoriesProducts.catId
+ORDER BY Products.name;
 ```
