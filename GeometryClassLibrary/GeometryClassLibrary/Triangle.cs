@@ -26,7 +26,8 @@ namespace GeometryClassLibrary
         {
             if (CheckIsTriangle(sideA, sideB, sideC))     
             {
-                throw new ArgumentOutOfRangeException("All sides of triangle must be greater than zero and sum sizes of 2 sides must be greater than size of third side.");
+                throw new ArgumentOutOfRangeException(
+                "All sides of triangle must be greater than zero and sum sizes of 2 sides must be greater than size of third side.");
             }
 
             SideA = sideA;
@@ -36,19 +37,11 @@ namespace GeometryClassLibrary
 
         public override double CalcArea()
         {
-            if (CheckRightAngle())                       // если треугольник прямоугольный, то ищем площадь по более простой формуле
-            {
-                return Math.Round((CathetL * CathetR) / 2, 2);
-            }
-            else                                        // иначе находим площадь по формуле Герона
-            {
                 double halfPer = (SideA + SideB + SideC) / 2;
                 return Math.Round(Math.Sqrt(halfPer * (halfPer - SideA) * (halfPer - SideB) * (halfPer - SideC)), 2);
-            }
-
         }
         
-        private bool CheckIsTriangle(double sideA, double sideB, double sideC)                 // проверка - является ли фигура треугольником
+        private bool CheckIsTriangle(double sideA, double sideB, double sideC)                 
         {
             if(((sideA <= 0) || (sideB <= 0) || (sideC <= 0)) || ((sideA + sideB <= sideC) || (sideA + sideC <= sideB) || (sideB + sideC <= sideA)))
             {
